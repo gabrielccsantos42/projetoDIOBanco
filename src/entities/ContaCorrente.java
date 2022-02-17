@@ -2,13 +2,14 @@ package entities;
 
 public class ContaCorrente extends Conta{
 	//Conta não precisa de um valor inicial como deposito!
+	private int agencia = 1;
 
-	public ContaCorrente(int agencia, int conta) {
-		super(agencia, conta);
+	public ContaCorrente(int conta) {
+		super(conta);
 	}
 	
-	public ContaCorrente(int agencia, int conta, double saldo) {
-		super(agencia, conta, saldo);
+	public ContaCorrente(int conta, double saldo) {
+		super(conta, saldo);
 	}
 	
 	

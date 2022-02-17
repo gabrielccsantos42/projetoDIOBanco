@@ -32,4 +32,8 @@ public class Cliente {
 	}
 	
 	
+	public String toString() {
+		return getNome() + getIdade() + getCpf();
+	}
+	
 }
