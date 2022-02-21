@@ -23,9 +23,9 @@ public class Conta {
 		return saldo;
 	}
 	
-	public double deposito(double deposito) {
-		System.out.println("Deposito realizado com sucesso!");
-		return saldo + deposito;
+	public void deposito(double deposito) {
+		saldo += deposito;
+		System.out.println("Deposito realizado");
 	}
 	
 	public void saque(double saque) {

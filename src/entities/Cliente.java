@@ -2,9 +2,9 @@ package entities;
 
 public class Cliente {
 	private String nome;
-	private int cpf;
+	private String cpf;
 	
-	public Cliente(String nome, int cpf) {
+	public Cliente(String nome, String cpf) {
 		this.nome = nome;
 		this.cpf = cpf;
 	}
@@ -17,7 +17,7 @@ public class Cliente {
 		this.nome = nome;
 	}
 	
-	public int getCpf() {
+	public String getCpf() {
 		return cpf;
 	}
 	

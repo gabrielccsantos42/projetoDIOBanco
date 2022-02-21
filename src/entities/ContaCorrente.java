@@ -20,8 +20,9 @@ public class ContaCorrente extends Conta{
 
 
 	@Override
-	public double deposito(double deposito) {
-		return saldo + deposito;
+	public void deposito(double deposito) {
+		saldo += deposito;
+		System.out.println("Deposito realizado");
 	}
 	
 	@Override

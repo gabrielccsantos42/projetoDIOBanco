@@ -3,35 +3,28 @@ package entities;
 public class ContaPoupanca extends Conta{
 	//Conta poupança obriga a instanciar o saldo e multiplicar pelo rendimento de 0.005;
 	private int agencia = 2;
-	private double rendimento = 0.005;
+	private double rendimento = 0.15;
 	
 	public ContaPoupanca(int conta, double saldoRendimento) {
 		super(conta, saldoRendimento);	
 	}
 	
-	
-	
 	public double getRendimento() {
 		return rendimento;
 	}
 
-
-
 	public void setRendimento(double rendimento) {
 		this.rendimento = rendimento;
 	}
-
-
-
+	
 	public int getAgencia() {
 		return agencia;
 	}
 
-
-
 	@Override
-	public double deposito(double deposito) {
-		return (saldo + deposito) * rendimento;
+	public void deposito(double deposito) {
+		saldo += deposito;
+		System.out.println("Deposito realizado");
 	}
 	
 	@Override

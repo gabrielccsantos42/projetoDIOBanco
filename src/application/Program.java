@@ -27,8 +27,8 @@ public class Program {
 		System.out.println("Vamos fazer seu cadastro: ");
 		System.out.print("Digite seu nome: ");
 		String name = read.nextLine();
-		System.out.print("Digite seu CPF: ");
-		int cpf = read.nextInt();
+		System.out.print("\nDigite seu CPF: ");
+		String cpf = read.nextLine();
 		
 	    cliente = new Cliente(name, cpf);
 		
