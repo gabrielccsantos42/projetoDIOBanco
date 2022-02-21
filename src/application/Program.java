@@ -59,14 +59,14 @@ public class Program {
 					System.out.println("Deseja fazer alguma operação?");
 					System.out.println("1 - DEPOSITO \n 2 - SAQUE \n 3 - TRANSFERENCIA");
 					operacao = read.nextInt();
-					operacao(operacao);
+					operacaoContaCorrente(operacao);
 				}
 				else {
 					acc = new ContaCorrente(conta);
 					System.out.println("Deseja fazer alguma operação?");
 					System.out.println("1 - DEPOSITO \n 2 - SAQUE \n 3 - TRANSFERENCIA");
 					operacao = read.nextInt();
-					operacao(operacao);
+					operacaoContaCorrente(operacao);
 					
 				}
 				break;
@@ -83,7 +83,7 @@ public class Program {
 				System.out.println("Deseja fazer alguma operação?");
 				System.out.println("1 - DEPOSITO \n 2 - SAQUE \n 3 - TRANSFERENCIA");
 				operacao = read.nextInt();
-				operacao(operacao);
+				operacaoContaPoupanca(operacao);
 				break;
 			default:
 				System.out.println("Número invalido!.");
@@ -91,25 +91,46 @@ public class Program {
 		read.close();
 	}
 	
-	public static void operacao(int operacao) {
+	public static void operacaoContaCorrente(int operacao) {
 		switch(operacao) {
 		case 1:
 			System.out.println("Qual o valor do deposito?");
 			deposito = read.nextDouble();
-			
+			acc.deposito(deposito);
 			break;
 		case 2: 
 			System.out.println("Qual o valor do saque?");
 			retirada = read.nextDouble();
-			
+			acc.saque(retirada);
 			break;
 		case 3:
 			System.out.println("Qual o valor da transferencia?");
 			retirada = read.nextDouble();
-
+			acc.transferencia(retirada);
 			break;
 		default:
 			System.out.println("Valor incorreto!.");
+		}
 	}
+		public static void operacaoContaPoupanca(int operacao) {
+			switch(operacao) {
+			case 1:
+				System.out.println("Qual o valor do deposito?");
+				deposito = read.nextDouble();
+				acp.deposito(deposito);
+				break;
+			case 2: 
+				System.out.println("Qual o valor do saque?");
+				retirada = read.nextDouble();
+				acp.saque(retirada);
+				break;
+			case 3:
+				System.out.println("Qual o valor da transferencia?");
+				retirada = read.nextDouble();
+				acp.transferencia(retirada);
+				break;
+			default:
+				System.out.println("Valor incorreto!.");
+		}
 	}
 }
