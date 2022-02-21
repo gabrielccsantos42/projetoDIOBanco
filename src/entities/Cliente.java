@@ -2,12 +2,10 @@ package entities;
 
 public class Cliente {
 	private String nome;
-	private int idade;
 	private int cpf;
 	
-	public Cliente(String nome, int idade, int cpf) {
+	public Cliente(String nome, int cpf) {
 		this.nome = nome;
-		this.idade = idade;
 		this.cpf = cpf;
 	}
 
@@ -18,22 +16,17 @@ public class Cliente {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-
-	public int getIdade() {
-		return idade;
-	}
-
-	public void setIdade(int idade) {
-		this.idade = idade;
-	}
-
+	
 	public int getCpf() {
 		return cpf;
 	}
 	
-	
+	@Override
 	public String toString() {
-		return getNome() + getIdade() + getCpf();
+		return "Cliente: " 
+				+ getNome() + "\n"+ 
+				"CPF: " 
+				+ getCpf() + "\n";
 	}
 	
 }

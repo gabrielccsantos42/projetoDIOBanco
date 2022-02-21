@@ -28,12 +28,10 @@ public class Program {
 		System.out.println("Vamos fazer seu cadastro: ");
 		System.out.print("Digite seu nome: ");
 		String name = read.nextLine();
-		System.out.print("Digite sua idade: ");
-		int idade = read.nextInt();
 		System.out.print("Digite seu CPF: ");
 		int cpf = read.nextInt();
 		
-	    cliente = new Cliente(name, idade, cpf);
+	    cliente = new Cliente(name, cpf);
 		
 		System.out.println("****CADASTRO FINALIZADO****");
 		System.out.println("Escolha seu tipo de conta: ");
@@ -47,7 +45,7 @@ public class Program {
 				System.out.println("Sua agencia vai ser 1.");
 				System.out.print("Escolha qual será sua conta: ");
 				conta = read.nextInt();
-				System.out.println("Dejesa fazer um deposito inicial?");
+				System.out.println("Dejesa fazer um deposito inicial? 1 - SIM 2 - NÃO");
 				numero = read.nextInt();
 				
 				if(numero == 1) {
@@ -60,6 +58,10 @@ public class Program {
 					System.out.println("1 - DEPOSITO \n 2 - SAQUE \n 3 - TRANSFERENCIA");
 					operacao = read.nextInt();
 					operacaoContaCorrente(operacao);
+					System.out.println("----EXTRATO----");
+					System.out.println(cliente);
+					
+					
 				}
 				else {
 					acc = new ContaCorrente(conta);
