@@ -12,6 +12,13 @@ public class ContaCorrente extends Conta{
 		super(conta, saldo);
 	}
 	
+	
+	
+	public int getAgencia() {
+		return agencia;
+	}
+
+
 	@Override
 	public double deposito(double deposito) {
 		return saldo + deposito;
@@ -37,5 +44,14 @@ public class ContaCorrente extends Conta{
 			saldo -= transferencia;
 			System.out.println("Transferencia concluida");
 		}
+	}
+	
+	public String toString() {
+		return "Agencia: "
+				+ getAgencia() + "\n" +
+				"Conta: " 
+				+ getConta() + "\n" +
+				"Saldo: "
+				+ getSaldo();
 	}
 }

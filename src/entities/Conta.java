@@ -1,7 +1,6 @@
 package entities;
 
 public class Conta {
-	private Cliente cliente;
 	protected int conta;
 	protected Double saldo;
 	

@@ -4,7 +4,6 @@ import java.util.Locale;
 import java.util.Scanner;
 
 import entities.Cliente;
-import entities.Conta;
 import entities.ContaCorrente;
 import entities.ContaPoupanca;
 
@@ -60,6 +59,7 @@ public class Program {
 					operacaoContaCorrente(operacao);
 					System.out.println("----EXTRATO----");
 					System.out.println(cliente);
+					System.out.println(acc);
 					
 					
 				}
@@ -69,7 +69,8 @@ public class Program {
 					System.out.println("1 - DEPOSITO \n 2 - SAQUE \n 3 - TRANSFERENCIA");
 					operacao = read.nextInt();
 					operacaoContaCorrente(operacao);
-					
+					System.out.println(cliente);
+					System.out.println(acc);
 				}
 				break;
 			case 2:
@@ -86,6 +87,8 @@ public class Program {
 				System.out.println("1 - DEPOSITO \n 2 - SAQUE \n 3 - TRANSFERENCIA");
 				operacao = read.nextInt();
 				operacaoContaPoupanca(operacao);
+				System.out.println(cliente);
+				System.out.println(acp);
 				break;
 			default:
 				System.out.println("Número invalido!.");

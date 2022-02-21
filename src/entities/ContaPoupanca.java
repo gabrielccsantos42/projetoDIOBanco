@@ -9,6 +9,26 @@ public class ContaPoupanca extends Conta{
 		super(conta, saldoRendimento);	
 	}
 	
+	
+	
+	public double getRendimento() {
+		return rendimento;
+	}
+
+
+
+	public void setRendimento(double rendimento) {
+		this.rendimento = rendimento;
+	}
+
+
+
+	public int getAgencia() {
+		return agencia;
+	}
+
+
+
 	@Override
 	public double deposito(double deposito) {
 		return (saldo + deposito) * rendimento;
@@ -34,5 +54,16 @@ public class ContaPoupanca extends Conta{
 			saldo -= transferencia;
 			System.out.println("Transferencia realizada");;
 		}
+	}
+	
+	public String toString() {
+		return "Agencia: "
+				+ getAgencia() + "\n" +
+				"Conta: " 
+				+ getConta() + "\n" +
+				"Saldo: "
+				+ getSaldo() + "\n" +
+				"Rendimento: "
+				+ getRendimento();
 	}
 }
