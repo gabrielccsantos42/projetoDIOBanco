@@ -9,17 +9,19 @@ import entities.ContaCorrente;
 import entities.ContaPoupanca;
 
 public class Program {
+	public static Scanner read = new Scanner(System.in);
+	public static int conta, numero, operacao;
+	public static double deposito, retirada;
+	
 
+	public static Cliente cliente;
+	public static ContaCorrente acc;
+	public static ContaPoupanca acp;
+	
 	public static void main(String[] args) {
 		Locale.setDefault(Locale.US);
-		Scanner read = new Scanner(System.in);
 		
-		Cliente cliente;
-		ContaCorrente acc;
-		ContaPoupanca acp;
 		
-		int conta, numero;
-		double deposito, retirada;
 		
 		System.out.println("*****Bem vindo ao Banco Digital Innovation*****");
 		
@@ -54,11 +56,17 @@ public class Program {
 					
 					acc = new ContaCorrente(conta, valorDeposito);
 					
-					//SUBROTINA OPERAÇÃO
+					System.out.println("Deseja fazer alguma operação?");
+					System.out.println("1 - DEPOSITO \n 2 - SAQUE \n 3 - TRANSFERENCIA");
+					operacao = read.nextInt();
+					operacao(operacao);
 				}
 				else {
 					acc = new ContaCorrente(conta);
-					//SUBROTINA OPERAÇÃO
+					System.out.println("Deseja fazer alguma operação?");
+					System.out.println("1 - DEPOSITO \n 2 - SAQUE \n 3 - TRANSFERENCIA");
+					operacao = read.nextInt();
+					operacao(operacao);
 					
 				}
 				break;
@@ -72,38 +80,36 @@ public class Program {
 					
 				acp = new ContaPoupanca(conta, valorDeposito);
 				
-				//SUBROTINA OPERAÇÃO
+				System.out.println("Deseja fazer alguma operação?");
+				System.out.println("1 - DEPOSITO \n 2 - SAQUE \n 3 - TRANSFERENCIA");
+				operacao = read.nextInt();
+				operacao(operacao);
 				break;
 			default:
 				System.out.println("Número invalido!.");
 		}
-		
-		//COMEÇO DA SUBROTINA
-		System.out.println("Deseja fazer alguma operação?");
-		System.out.println("1 - DEPOSITO \n 2 - SAQUE \n 3 - TRANSFERENCIA");
-		int operacao = read.nextInt();
-		switch(operacao) {
-			case 1:
-				System.out.println("Qual o valor do deposito?");
-				deposito = read.nextDouble();
-				
-				break;
-			case 2: 
-				System.out.println("Qual o valor do saque?");
-				retirada = read.nextDouble();
-				
-				break;
-			case 3:
-				System.out.println("Qual o valor da transferencia?");
-				retirada = read.nextDouble();
-
-				break;
-			default:
-				System.out.println("Valor incorreto!.");
-		}
-		//FINAL DA SUBROTINA
-		
 		read.close();
 	}
+	
+	public static void operacao(int operacao) {
+		switch(operacao) {
+		case 1:
+			System.out.println("Qual o valor do deposito?");
+			deposito = read.nextDouble();
+			
+			break;
+		case 2: 
+			System.out.println("Qual o valor do saque?");
+			retirada = read.nextDouble();
+			
+			break;
+		case 3:
+			System.out.println("Qual o valor da transferencia?");
+			retirada = read.nextDouble();
 
+			break;
+		default:
+			System.out.println("Valor incorreto!.");
+	}
+	}
 }
