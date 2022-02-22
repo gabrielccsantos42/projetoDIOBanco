@@ -23,7 +23,7 @@ public class ContaPoupanca extends Conta{
 
 	@Override
 	public void deposito(double deposito) {
-		saldo += deposito;
+		saldo += (deposito * rendimento);
 		System.out.println("Deposito realizado");
 	}
 	

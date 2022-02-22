@@ -27,14 +27,15 @@ public class Program {
 		System.out.println("Vamos fazer seu cadastro: ");
 		System.out.print("Digite seu nome: ");
 		String name = read.nextLine();
-		System.out.print("\nDigite seu CPF: ");
+		System.out.print("Digite seu CPF: ");
 		String cpf = read.nextLine();
 		
 	    cliente = new Cliente(name, cpf);
 		
 		System.out.println("****CADASTRO FINALIZADO****");
 		System.out.println("Escolha seu tipo de conta: ");
-		System.out.println("1 - CONTA CORRENTE \n 2 - CONTA POUPANÇA");
+		System.out.println("1 - CONTA CORRENTE");
+		System.out.println("2 - CONTA POUPANÇA");
 		
 		int tipoConta = read.nextInt();
 		
@@ -44,7 +45,9 @@ public class Program {
 				System.out.println("Sua agencia vai ser 1.");
 				System.out.print("Escolha qual será sua conta: ");
 				conta = read.nextInt();
-				System.out.println("Dejesa fazer um deposito inicial? 1 - SIM 2 - NÃO");
+				System.out.println("Dejesa fazer um deposito inicial?");
+				System.out.println("1 - SIM");
+				System.out.println("2 - NÃO");
 				numero = read.nextInt();
 				
 				if(numero == 1) {
@@ -53,24 +56,15 @@ public class Program {
 					
 					acc = new ContaCorrente(conta, valorDeposito);
 					
-					System.out.println("Deseja fazer alguma operação?");
-					System.out.println("1 - DEPOSITO \n 2 - SAQUE \n 3 - TRANSFERENCIA");
+					imprimirOperacao();
 					operacao = read.nextInt();
 					operacaoContaCorrente(operacao);
-					System.out.println("----EXTRATO----");
-					System.out.println(cliente);
-					System.out.println(acc);
-					
-					
 				}
 				else {
 					acc = new ContaCorrente(conta);
-					System.out.println("Deseja fazer alguma operação?");
-					System.out.println("1 - DEPOSITO \n 2 - SAQUE \n 3 - TRANSFERENCIA");
+					imprimirOperacao();
 					operacao = read.nextInt();
 					operacaoContaCorrente(operacao);
-					System.out.println(cliente);
-					System.out.println(acc);
 				}
 				break;
 			case 2:
@@ -83,12 +77,9 @@ public class Program {
 					
 				acp = new ContaPoupanca(conta, valorDeposito);
 				
-				System.out.println("Deseja fazer alguma operação?");
-				System.out.println("1 - DEPOSITO \n 2 - SAQUE \n 3 - TRANSFERENCIA");
+				imprimirOperacao(); 
 				operacao = read.nextInt();
 				operacaoContaPoupanca(operacao);
-				System.out.println(cliente);
-				System.out.println(acp);
 				break;
 			default:
 				System.out.println("Número invalido!.");
@@ -96,6 +87,12 @@ public class Program {
 		read.close();
 	}
 	
+	public static void imprimirOperacao() {
+		System.out.println("Deseja fazer alguma operação?");
+		System.out.println("1 - DEPOSITO");
+		System.out.println("2 - SAQUE");
+		System.out.println("3 - TRANSFERENCIA");
+	}
 	public static void operacaoContaCorrente(int operacao) {
 		switch(operacao) {
 		case 1:
@@ -116,8 +113,11 @@ public class Program {
 		default:
 			System.out.println("Valor incorreto!.");
 		}
+		System.out.println("----EXTRATO----");
+		System.out.println(cliente);
+		System.out.println(acc);
 	}
-		public static void operacaoContaPoupanca(int operacao) {
+	public static void operacaoContaPoupanca(int operacao) {
 			switch(operacao) {
 			case 1:
 				System.out.println("Qual o valor do deposito?");
@@ -137,5 +137,8 @@ public class Program {
 			default:
 				System.out.println("Valor incorreto!.");
 		}
+		System.out.println("----EXTRATO----");
+		System.out.println(cliente);
+		System.out.println(acp);
 	}
 }
